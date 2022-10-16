@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-       imagename = "ochayi22/project"
+       imagename = "ochayi22/awesome"
        registryCredential = 'DockerHub'
        dockerImage = ''
            }
@@ -55,7 +55,7 @@ pipeline {
     stage ('Deploy To Tomcat Server') {
       steps{
         script {
-         deploy adapters: [tomcat9(credentialsId: 'Tomcat', path: '', url: 'http://3.82.110.233:8080/')], contextPath: 'webapp', war: '**/*.war'
+         deploy adapters: [tomcat9(credentialsId: 'Tomcat', path: '', url: 'http://3.82.110.233:8080/')], contextPath: 'webapp', war: ' **/*.war'
            }
        }
    }
